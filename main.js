@@ -2,6 +2,7 @@
 var app = new Vue({ 
     // index.htmlのどこを対象としてVueを使用するかを定義
     el: '#app',
+    vuetify: new Vuetify(),
     data: {
         // v-modelのデフォルト値
         output: '0',
@@ -28,5 +29,4 @@ var app = new Vue({
             }
         }
     }
-    // vuetify: new Vuetify()
 })
