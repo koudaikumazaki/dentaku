@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>dentaku</title>
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@3.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet"> -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <!-- tdをいちいち書くのがめんどくさいのでvue.jsを使いました。 -->
+    <table id="app">
+        <tr>
+            <!-- inputタグ内にv-modelと書くことでinputタグを動的に操作できるようになる。 -->
+            <td colspan="3"><input type="text" v-model="output"></td>
+            <!-- v-on:clickでクリックされたときに行う処理を指定 -->
+            <td><button value="C" v-on:click="calc('C')">C</button></td>
+        </tr>
+        <!-- v-forで繰り返し処理を行う。row in itemsは配列itemsの要素を繰り返し取得する -->
+        <tr v-for="row in items">
+            <!-- item in rowで配列itemsの要素の、さらに中の要素を繰り返し取得する -->
+            <td v-for="item in row">
+                <button v-on:click="calc(item)">{{ item }}</button>
+            </td>
+        </tr>
+    </table>
+    <script src="main.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script> -->
+</body>
+</html>
